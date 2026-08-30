@@ -1,0 +1,128 @@
+/* Standalone Bynji legal-site styles. No extension code is included. */
+:root {
+  color-scheme: light dark;
+  --background: #f7f5f0;
+  --surface: #fffdfa;
+  --text: #172033;
+  --muted: #667085;
+  --border: #dce2ec;
+  --accent: #2f6fed;
+  --heart: #d94f70;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #11151d;
+    --surface: #181e29;
+    --text: #f4f6fa;
+    --muted: #a8b1c2;
+    --border: #313a49;
+    --accent: #7da6ff;
+    --heart: #ff87a3;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font:
+    16px/1.65 system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+header,
+main,
+footer {
+  width: min(760px, calc(100% - 40px));
+  margin-inline: auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 24px;
+}
+.brand {
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+nav a,
+main a,
+footer a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+main {
+  min-height: calc(100vh - 180px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: clamp(24px, 5vw, 48px);
+  background: var(--surface);
+}
+h1,
+h2 {
+  line-height: 1.2;
+}
+h1 {
+  margin-top: 0;
+  font-size: clamp(32px, 7vw, 52px);
+}
+h2 {
+  margin-top: 2rem;
+  font-size: 22px;
+}
+.lede {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 19px;
+}
+.effective,
+.muted {
+  color: var(--muted);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 15px;
+  background: var(--background);
+  font-weight: 700;
+  text-decoration: none;
+}
+.button--heart {
+  color: var(--heart);
+}
+footer {
+  padding-block: 24px 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+ul {
+  padding-left: 1.25rem;
+}
+@media (max-width: 520px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
