@@ -4,76 +4,131 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#06111e" />
     <meta
       name="description"
       content="Terms of use for the Bynji browser extension."
     />
     <title>Terms of Use · Bynji</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16.png"
+    />
+    <script src="theme.js"></script>
     <link rel="stylesheet" href="site.css" />
   </head>
   <body>
-    <header>
-      <a class="brand" href="index.html">Bynji</a>
-      <nav aria-label="Legal pages">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Bynji home"
+        ><img
+          src="assets/bynji-icon-128.png"
+          alt=""
+          width="42"
+          height="42"
+        /><span>Bynji</span></a
+      >
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="help.html">Help</a>
         <a href="privacy.html">Privacy</a>
         <a aria-current="page" href="terms.html">Terms</a>
+        <a
+          class="nav-support"
+          href="https://ko-fi.com/bynji"
+          target="_blank"
+          rel="noreferrer"
+          ><span aria-hidden="true">♥</span> Support</a
+        >
       </nav>
     </header>
-    <main>
-      <h1>Bynji Terms of Use</h1>
-      <p class="effective">Effective 30 August 2026</p>
-      <p>
-        Bynji is provided as a local browser utility for recording viewing
-        history and playback progress. By installing or using Bynji, you agree
-        to use it lawfully and consistently with the terms of the websites and
-        services you choose to visit.
-      </p>
-      <h2>No media service or affiliation</h2>
-      <p>
-        Bynji does not provide, host, download, or license video. It is not
-        affiliated with or endorsed by the websites, media services, studios, or
-        titles that may appear in a user's private Library. Third-party names
-        and marks belong to their respective owners.
-      </p>
-      <h2>Your data and backups</h2>
-      <p>
-        You control deletion and exports. You are responsible for protecting
-        exported files and for
-        maintaining backups appropriate to your needs.
-      </p>
-      <h2>Availability and warranty</h2>
-      <p>
-        Websites and browser behavior change. Bynji is provided “as is” and “as
-        available,” without warranties of uninterrupted operation, universal
-        compatibility, accuracy, merchantability, fitness for a particular
-        purpose, or non-infringement, to the maximum extent permitted by
-        applicable law. Nothing in these terms excludes rights that cannot
-        legally be excluded.
-      </p>
-      <h2>Limitation of liability</h2>
-      <p>
-        To the maximum extent permitted by applicable law, the Bynji developer
-        is not liable for indirect, incidental, special, consequential, or
-        exemplary loss arising from use of the extension, loss of locally stored
-        data, or third-party websites. Nothing limits liability where doing so
-        would be unlawful.
-      </p>
-      <h2>Donations</h2>
-      <p>
-        Donations are voluntary support for development. They do not purchase
-        ownership, guaranteed features, service levels, or influence over
-        product decisions. Payment processing is governed by the chosen payment
-        provider's terms.
-      </p>
-      <h2>Changes and contact</h2>
-      <p>
-        Material changes will update these terms and their effective date. The
-        current contact method is provided in the
-        <a href="privacy.html">Privacy Policy</a>.
-      </p>
+    <main id="main" class="page-shell">
+      <aside class="page-aside">
+        <strong>Terms</strong>
+        <nav aria-label="Terms sections">
+          <a href="#media">No affiliation</a><a href="#data">Your data</a
+          ><a href="#warranty">Availability</a><a href="#liability">Liability</a
+          ><a href="#donations">Donations</a><a href="#changes">Changes</a>
+        </nav>
+      </aside>
+      <article class="document">
+        <p class="eyebrow">Terms of use</p>
+        <h1>Bynji Terms of Use</h1>
+        <p class="effective">Effective 31 August 2026</p>
+        <p>
+          Bynji is provided as a local browser utility for recording viewing
+          history and playback progress. By installing or using Bynji, you agree
+          to use it lawfully and consistently with the terms of the websites and
+          services you choose to visit.
+        </p>
+        <h2 id="media">No media service or affiliation</h2>
+        <p>
+          Bynji does not provide, host, download, or license video. It is not
+          affiliated with or endorsed by the websites, media services, studios,
+          or titles that may appear in a user's private Library. Third-party
+          names and marks belong to their respective owners.
+        </p>
+        <h2 id="data">Your data and backups</h2>
+        <p>
+          You control deletion and exports. You are responsible for protecting
+          exported files and for maintaining backups appropriate to your needs.
+        </p>
+        <h2 id="warranty">Availability and warranty</h2>
+        <p>
+          Websites and browser behavior change. Bynji is provided “as is” and
+          “as available,” without warranties of uninterrupted operation,
+          universal compatibility, accuracy, merchantability, fitness for a
+          particular purpose, or non-infringement, to the maximum extent
+          permitted by applicable law. Nothing in these terms excludes rights
+          that cannot legally be excluded.
+        </p>
+        <h2 id="liability">Limitation of liability</h2>
+        <p>
+          To the maximum extent permitted by applicable law, the Bynji developer
+          is not liable for indirect, incidental, special, consequential, or
+          exemplary loss arising from use of the extension, loss of locally
+          stored data, or third-party websites. Nothing limits liability where
+          doing so would be unlawful.
+        </p>
+        <h2 id="donations">Donations</h2>
+        <p>
+          Donations are voluntary support for development. They do not purchase
+          ownership, guaranteed features, service levels, or influence over
+          product decisions. Payment processing is governed by the chosen
+          payment provider's terms.
+        </p>
+        <h2 id="changes">Changes and contact</h2>
+        <p>
+          Material changes will update these terms and their effective date. The
+          current contact method is provided in the
+          <a href="privacy.html">Privacy Policy</a>.
+        </p>
+      </article>
     </main>
-    <footer>
-      <a href="index.html">Bynji home</a> · <a href="privacy.html">Privacy</a>
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/bynji-icon-128.png" alt="" width="38" height="38" />
+        <div>
+          <strong>Bynji</strong
+          ><span>Private video progress. Local-first. No ads.</span>
+        </div>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a><a href="help.html">Help</a
+        ><a href="privacy.html">Privacy</a><a href="support.html">Support</a>
+      </nav>
+      <p>
+        © 2026 Bynji. Third-party names and marks belong to their respective
+        owners.
+      </p>
     </footer>
   </body>
 </html>

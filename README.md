@@ -1,25 +1,60 @@
-# Bynji Legal
+# Bynji Public Website
 
-Public legal pages for **Bynji**.
+![Bynji — Private video progress. Local-first. No ads.](assets/bynji-brand-banner.png)
 
-This repository contains only the static legal website used for Bynji’s public-facing policies. It does **not** contain the Bynji browser extension source code.
+Static public website and legal pages for **Bynji**.
+
+This repository contains the public product overview, Help guide, support page, Privacy Policy,
+Terms, and approved marketing assets. It does **not** contain the Bynji browser extension source
+code.
+
+## About Bynji
+
+Bynji is a private, local-first browser extension that remembers meaningful video progress and
+viewing history across the web. It helps viewers return to confirmed saved positions while keeping
+their Library under their control.
+
+- Automatic progress and viewing-history tracking
+- Resume prompts and saved positions
+- Organized Library, Trail, and private Insights
+- Human-readable and portable exports
+- No ads, accounts, or developer-operated analytics
+
+![Bynji Library](assets/library.png)
 
 ## Pages
 
-* Home: https://bynjiapp.github.io/bynji-legal/
-* Privacy Policy: https://bynjiapp.github.io/bynji-legal/privacy.html
-* Terms: https://bynjiapp.github.io/bynji-legal/terms.html
+- Home: https://bynjiapp.github.io/bynji-legal/
+- Help: https://bynjiapp.github.io/bynji-legal/help.html
+- Privacy Policy: https://bynjiapp.github.io/bynji-legal/privacy.html
+- Terms: https://bynjiapp.github.io/bynji-legal/terms.html
+- Support: https://bynjiapp.github.io/bynji-legal/support.html
+
+## Support Bynji
+
+If Bynji makes watching a little easier, you can support its independent development through
+[Ko-fi](https://ko-fi.com/bynji). Support is voluntary and does not unlock core public features.
 
 ## Repository contents
 
-* `index.html` — legal site homepage
-* `privacy.html` — Bynji Privacy Policy
-* `terms.html` — Bynji Terms
-* `site.css` — shared site styling
-* `.nojekyll` — serves the site directly through GitHub Pages without Jekyll processing
+- `index.html` — public product homepage
+- `help.html` — original Bynji quick guide, troubleshooting, and FAQ
+- `privacy.html` — Bynji Privacy Policy
+- `terms.html` — Bynji Terms
+- `support.html` — voluntary Ko-fi support page
+- `site.css` — responsive Bynji styling with dark mode as the default
+- `theme.js` — local light/dark switch; it stores only the visitor's theme preference
+- `assets/` — approved Bynji artwork and product screenshots
+- `.nojekyll` — serves the site directly through GitHub Pages without Jekyll processing
+- `robots.txt` and `sitemap.xml` — basic search-engine discovery for the public pages
 
 ## Purpose
 
-This repository exists solely to host Bynji’s public legal pages through GitHub Pages.
+This repository exists solely to host Bynji’s public information and legal pages through GitHub
+Pages. The site uses no Bynji-operated analytics, advertising, remote JavaScript, or cookies. It
+defaults to dark mode and stores an optional light-mode selection only in the visitor's browser.
 
-The main Bynji application and browser extension code are maintained separately and are not published in this repository.
+Product screenshots retain their original proportions. The site does not stretch, squash, or
+reframe them with forced aspect ratios.
+
+The Bynji browser extension is maintained separately and is not published in this repository.

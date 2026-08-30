@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#06111e" />
+    <meta
+      name="description"
+      content="Learn how to set up Bynji, save video progress, use Resume, and manage your private viewing history."
+    />
+    <title>Help · Bynji</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16.png"
+    />
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Bynji home">
+        <img src="assets/bynji-icon-128.png" alt="" width="42" height="42" />
+        <span>Bynji</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a aria-current="page" href="help.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a
+          class="nav-support"
+          href="https://ko-fi.com/bynji"
+          target="_blank"
+          rel="noreferrer"
+          ><span aria-hidden="true">♥</span> Support</a
+        >
+      </nav>
+    </header>
+
+    <main id="main" class="page-shell">
+      <aside class="page-aside">
+        <strong>Help</strong>
+        <nav aria-label="Help topics">
+          <a href="#quick-start">Quick start</a>
+          <a href="#toolbar">Toolbar popup</a>
+          <a href="#resume">Playback &amp; Resume</a>
+          <a href="#library">Library, Trail &amp; Insights</a>
+          <a href="#controls">Settings &amp; data</a>
+          <a href="#permissions">Permissions</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </aside>
+
+      <article class="help-page">
+        <p class="eyebrow">Quick guide &amp; FAQ</p>
+        <h1>Bynji Help</h1>
+        <p class="page-intro">
+          Bynji quietly remembers meaningful video playback. You watch normally;
+          Bynji builds a private Library and offers confirmed Resume positions
+          when it is safe to do so.
+        </p>
+
+        <section id="quick-start">
+          <h2>Quick start</h2>
+          <div class="quick-grid">
+            <div class="quick-card">
+              <h3>1. Finish first-time setup</h3>
+              <p>
+                Choose light or dark mode, your Resume preference, and optional
+                subtitle behavior.
+              </p>
+            </div>
+            <div class="quick-card">
+              <h3>2. Pin Bynji</h3>
+              <p>
+                Open Chrome’s Extensions menu and pin Bynji if you want its icon
+                beside the address bar.
+              </p>
+            </div>
+            <div class="quick-card">
+              <h3>3. Watch normally</h3>
+              <p>
+                Play a standard web video. Bynji waits for meaningful playback
+                before saving it.
+              </p>
+            </div>
+            <div class="quick-card">
+              <h3>4. Return later</h3>
+              <p>
+                Open the video again and use the Resume prompt or your Library’s
+                Resume action.
+              </p>
+            </div>
+          </div>
+          <p class="notice">
+            Bynji normally qualifies playback after 60 seconds. Muted autoplay
+            and small background videos can be ignored through Settings so they
+            do not clutter your history.
+          </p>
+        </section>
+
+        <section id="toolbar">
+          <h2>The toolbar popup</h2>
+          <p>
+            The popup shows the current video, saved progress, tracking status
+            and Continue Watching. Its header provides direct access to support,
+            Library and Settings. If the icon is hidden, use Chrome’s Extensions
+            button and pin Bynji.
+          </p>
+          <figure class="inline-shot">
+            <img
+              src="assets/popup-resume-context.png"
+              alt="Bynji popup showing saved progress beside the active Bynji's Night Walk video"
+              width="2873"
+              height="1938"
+              loading="lazy"
+            />
+          </figure>
+        </section>
+
+        <section id="resume">
+          <h2>Playback &amp; Resume</h2>
+          <h3>When Bynji offers Resume</h3>
+          <p>
+            Resume is offered only when Bynji has a confirmed saved position,
+            recognizes the current presentation, and considers its timeline
+            safe. Refreshes, new tabs, player replacement and later backward
+            seeks can trigger a fresh eligibility check.
+          </p>
+          <h3>Resume modes</h3>
+          <ul>
+            <li>
+              <strong>Ask:</strong> show a prompt and let you decide. This is
+              the default.
+            </li>
+            <li>
+              <strong>Never:</strong> keep progress without showing Resume
+              prompts.
+            </li>
+            <li>
+              <strong>Auto:</strong> resume automatically when the saved
+              position is safely confirmed.
+            </li>
+          </ul>
+          <p>
+            Closing a Resume prompt records a dismissal for that presentation so
+            Bynji does not keep interrupting you. You can always resume manually
+            from Library.
+          </p>
+          <h3>Completion</h3>
+          <p>
+            Bynji can infer completion near the end of a video, and you can mark
+            an item complete or incomplete yourself. Your explicit choice takes
+            priority.
+          </p>
+        </section>
+
+        <section id="library">
+          <h2>Library, Trail &amp; Insights</h2>
+          <h3>Library</h3>
+          <p>
+            Library organizes saved videos, movies, series and episodes. Select
+            an item to inspect its progress, available website sources and
+            playback history. Series expand with the newest season and episode
+            first.
+          </p>
+          <h3>Trail</h3>
+          <p>
+            Trail groups qualified viewing sessions by day. It shows when you
+            watched, for how long, and how multiple videos related within the
+            session.
+          </p>
+          <h3>Insights</h3>
+          <p>
+            Insights summarizes watch time, completed media and active series
+            using information stored in your local Bynji database. Bynji does
+            not send these summaries to an analytics service.
+          </p>
+        </section>
+
+        <section id="controls">
+          <h2>Settings &amp; your data</h2>
+          <ul>
+            <li>
+              <strong>Appearance:</strong> light and dark mode apply to
+              Bynji-owned pages, popups and Resume prompts.
+            </li>
+            <li>
+              <strong>Subtitles:</strong> optionally request a preferred
+              language when the active player exposes suitable tracks.
+            </li>
+            <li>
+              <strong>Excluded websites:</strong> stop Bynji from tracking
+              websites you select.
+            </li>
+            <li>
+              <strong>Tracking:</strong> disable all new page observation
+              without deleting existing history.
+            </li>
+            <li>
+              <strong>Exports:</strong> create human-readable TXT or Markdown,
+              or a portable JSON backup.
+            </li>
+            <li>
+              <strong>Deletion:</strong> remove individual items, website
+              history, or all Bynji data.
+            </li>
+          </ul>
+          <p>
+            Local Sync is not included in the public Chrome Web Store build. The
+            extension remains fully usable without it, and your manual export
+            options remain available in Settings.
+          </p>
+        </section>
+
+        <section id="permissions">
+          <h2>Why Bynji requests permissions</h2>
+          <ul>
+            <li>
+              <strong>Website access:</strong> recognize active playback and
+              read bounded video metadata.
+            </li>
+            <li>
+              <strong>Storage:</strong> preserve your local Library, progress,
+              settings and viewing sessions.
+            </li>
+            <li>
+              <strong>Web navigation:</strong> keep the correct video attached
+              after page or player changes.
+            </li>
+            <li>
+              <strong>Alarms:</strong> perform bounded local maintenance while
+              the extension is idle.
+            </li>
+            <li>
+              <strong>Side Panel:</strong> provide the optional browser-owned
+              Bynji panel.
+            </li>
+          </ul>
+          <p>
+            Bynji does not execute remote code, use these permissions for
+            advertising, or transmit your viewing history to the developer. Read
+            the <a href="privacy.html">Privacy Policy</a> for the complete
+            disclosure.
+          </p>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>Troubleshooting</h2>
+          <h3>A video was not saved</h3>
+          <ol>
+            <li>
+              Confirm tracking is enabled and the website is not excluded.
+            </li>
+            <li>Play the main video normally for at least 60 seconds.</li>
+            <li>
+              Check that the video is not muted autoplay or a small background
+              player you asked Bynji to ignore.
+            </li>
+            <li>Open the popup and check its current tracking status.</li>
+          </ol>
+          <h3>Resume was not offered</h3>
+          <ol>
+            <li>Confirm Resume is set to Ask or Auto.</li>
+            <li>
+              Check Library for a meaningful confirmed position rather than only
+              a few seconds.
+            </li>
+            <li>
+              Wait for the player to finish loading, then interact with its
+              timeline once.
+            </li>
+            <li>
+              Use the Library Resume button if a website prevents the on-page
+              prompt from appearing.
+            </li>
+          </ol>
+          <h3>A title or episode looks wrong</h3>
+          <p>
+            Websites sometimes expose player branding, recommendation lists or
+            incomplete episode data. Bynji keeps uncertainty separate rather
+            than risking a destructive merge. You can correct the item in
+            Library, and your correction outranks later automatic discovery.
+          </p>
+          <h3>Bynji cannot run on a page</h3>
+          <p>
+            Browsers block extensions from modifying internal pages, the Chrome
+            Web Store and some protected documents. Bynji also disables
+            incognito access by design.
+          </p>
+        </section>
+
+        <section id="faq">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-grid">
+            <div class="faq-card">
+              <h3>Where is my history stored?</h3>
+              <p>
+                Inside Bynji’s local browser database on your device until you
+                delete or export it.
+              </p>
+            </div>
+            <div class="faq-card">
+              <h3>Does Bynji have an account?</h3>
+              <p>
+                No. The public extension has no Bynji account or
+                developer-operated cloud.
+              </p>
+            </div>
+            <div class="faq-card">
+              <h3>Does it work on every website?</h3>
+              <p>
+                It supports standard web players, but compatibility varies as
+                websites and players change.
+              </p>
+            </div>
+            <div class="faq-card">
+              <h3>Can I back up my Library?</h3>
+              <p>
+                Yes. Export JSON in Settings for a portable backup, or
+                TXT/Markdown for a readable copy.
+              </p>
+            </div>
+            <div class="faq-card">
+              <h3>Does Bynji track every page I visit?</h3>
+              <p>
+                No. It observes pages to identify active video playback and
+                saves qualified media activity.
+              </p>
+            </div>
+            <div class="faq-card">
+              <h3>How can I support development?</h3>
+              <p>
+                Share Bynji or make a voluntary contribution through
+                <a
+                  href="https://ko-fi.com/bynji"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Ko-fi</a
+                >.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/bynji-icon-128.png" alt="" width="38" height="38" />
+        <div>
+          <strong>Bynji</strong
+          ><span>Private video progress. Local-first. No ads.</span>
+        </div>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a><a href="privacy.html">Privacy</a
+        ><a href="terms.html">Terms</a><a href="support.html">Support</a>
+      </nav>
+      <p>
+        © 2026 Bynji. Third-party names and marks belong to their respective
+        owners.
+      </p>
+    </footer>
+  </body>
+</html>

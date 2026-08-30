@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bynjiapp.github.io/bynji-legal/sitemap.xml
