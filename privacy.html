@@ -51,8 +51,7 @@
         </li>
         <li>
           User-selected settings, including appearance, subtitle preference,
-          excluded websites, Resume behavior, and optional Local Sync
-          configuration.
+          excluded websites, and Resume behavior.
         </li>
       </ul>
       <p>
@@ -61,6 +60,30 @@
         licence-server information, passwords, payment information, clipboard
         contents, download history, or incognito activity.
       </p>
+
+      <h2>Chrome Web Store data categories</h2>
+      <p>
+        Chrome treats information processed or stored only on a user's device
+        as handled user data. Bynji therefore discloses the following Chrome Web
+        Store categories:
+      </p>
+      <ul>
+        <li>
+          <strong>Web history:</strong> the URL, domain, media or page title,
+          and viewing timestamps for qualified video pages.
+        </li>
+        <li>
+          <strong>User activity:</strong> video playback position, watched
+          ranges, completion state, Resume decisions, and user corrections.
+          Bynji does not log general clicks, keystrokes, mouse movement, or
+          scrolling.
+        </li>
+        <li>
+          <strong>Website content:</strong> bounded page and player metadata
+          needed to identify the current video, such as title, series, season,
+          episode, duration, content type, selected controls, and artwork URL.
+        </li>
+      </ul>
 
       <h2>Purpose and consent</h2>
       <p>
@@ -85,21 +108,6 @@
         metadata-discovery path does not make external provider calls.
       </p>
 
-      <h2>Optional Local Sync</h2>
-      <p>
-        Local Sync is off by default. On supported systems, enabling it requires
-        a separate user action, the browser's optional Native Messaging
-        permission, a locally installed companion helper, and a folder selected
-        by the user. Bynji then reads and writes plaintext portable state files
-        only in that location. Those files can reveal viewing history.
-      </p>
-      <p>
-        Bynji does not upload Local Sync files. If the user separately chooses
-        Syncthing, Google Drive, Dropbox, iCloud, or another file-sync product,
-        that product's privacy and security practices govern its copy of the
-        files.
-      </p>
-
       <h2>Permissions</h2>
       <ul>
         <li>
@@ -114,30 +122,34 @@
           after navigation or player replacement.
         </li>
         <li>
-          Alarms perform bounded local maintenance and optional Local Sync
-          checks.
+          Alarms perform bounded local maintenance.
         </li>
         <li>Side Panel provides an optional browser-owned Bynji interface.</li>
-        <li>
-          Native Messaging is optional and requested only when a supported user
-          enables Local Sync.
-        </li>
       </ul>
       <p>Incognito access is disabled in the extension manifest.</p>
+
+      <h2>Remote code</h2>
+      <p>
+        Bynji does not execute remote code. Its executable JavaScript is
+        included in the installed Manifest V3 package. It does not load remote
+        scripts or WebAssembly, evaluate fetched strings as code, or fetch
+        commands for execution. Page text, structured metadata, and serialized
+        page state are treated only as data and are not evaluated as code.
+      </p>
 
       <h2>Sharing, security, and human access</h2>
       <p>
         Bynji does not sell, rent, share, or use viewing information for
         advertising, credit decisions, profiling, or generalized market
         research. The developer cannot remotely access locally stored viewing
-        information. Users may intentionally share an export or Local Sync file
-        under their own control.
+        information. Users may intentionally share an export under their own
+        control.
       </p>
       <p>
         Bynji validates extension messages and imported records, uses Manifest
         V3 with locally packaged executable code, and sanitizes sensitive query
-        parameters in bounded diagnostics. Users should protect exported and
-        synchronized plaintext files as private viewing history.
+        parameters in bounded diagnostics. Users should protect exported
+        plaintext files as private viewing history.
       </p>
 
       <h2>Chrome Web Store Limited Use disclosure</h2>
@@ -150,8 +162,8 @@
       <h2>Changes and contact</h2>
       <p>
         Material changes will update this policy and its effective date.
-        Questions and privacy requests can be sent through the developer support
-        contact and Support hub displayed on Bynji's Chrome Web Store listing.
+        Questions and privacy requests can be sent to
+        <a href="mailto:bynjiapp@proton.me">bynjiapp@proton.me</a>.
       </p>
     </main>
     <footer>
