@@ -20,7 +20,7 @@
   --radius-small: 10px;
   --radius: 16px;
   --radius-large: 24px;
-  --content: 1180px;
+  --content: 1380px;
   --font:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -467,6 +467,7 @@ h3 {
 
 .product-shot {
   overflow: hidden;
+  max-width: 100%;
   margin: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -480,6 +481,7 @@ h3 {
 
 .product-shot img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   background: var(--surface-secondary);
 }

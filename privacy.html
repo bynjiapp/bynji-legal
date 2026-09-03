@@ -22,8 +22,8 @@
       sizes="16x16"
       href="assets/favicon-16.png"
     />
-    <script src="theme.js"></script>
-    <link rel="stylesheet" href="site.css" />
+    <script src="theme.js?v=20260831-2"></script>
+    <link rel="stylesheet" href="site.css?v=20260831-2" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -53,6 +53,7 @@
           <a href="#information">Information</a>
           <a href="#purpose">Purpose</a>
           <a href="#storage">Storage</a>
+          <a href="#sync">Local Sync</a>
           <a href="#permissions">Permissions</a>
           <a href="#sharing">Sharing &amp; security</a>
           <a href="#website">This website</a>
@@ -62,7 +63,7 @@
       <article class="document">
         <p class="eyebrow">Public policy</p>
         <h1>Bynji Privacy Policy</h1>
-        <p class="effective">Effective 31 August 2026</p>
+        <p class="effective">Effective 1 September 2026</p>
         <p>
           Bynji is a private, local-first browser extension that saves video
           playback progress and viewing history. It has no advertising,
@@ -94,7 +95,13 @@
           </li>
           <li>
             User-selected settings, including appearance, subtitle preference,
-            excluded websites, and Resume behavior.
+            excluded websites, Resume behavior, and optional Local Sync
+            configuration when available in a supporting build.
+          </li>
+          <li>
+            Optional viewer-profile names and sanitized avatar images selected
+            by the user. Bynji does not retain the avatar's original path or
+            filename.
           </li>
         </ul>
         <p>
@@ -139,16 +146,33 @@
 
         <h2 id="storage">Storage, retention, and deletion</h2>
         <p>
-          Viewing information is stored in the browser extension's local
-          IndexedDB database. It remains there until the user deletes entries,
-          resets Bynji data, removes the extension according to browser
-          behavior, or imports a file they explicitly selected. JSON, Markdown,
-          and text exports are created locally only after a user action.
+          Viewing information is stored locally by the browser extension. It
+          remains there until the user deletes entries, resets Bynji data,
+          removes the extension according to browser behavior, or imports a file
+          they explicitly selected. JSON, Markdown, and text exports are created
+          locally only after a user action.
         </p>
         <p>
           Bynji does not transmit viewing information to the developer or to an
           analytics, advertising, metadata, or AI service. The active
           metadata-discovery path does not make external provider calls.
+        </p>
+
+        <h2 id="sync">Optional Local Sync</h2>
+        <p>
+          Local Sync is an optional feature and is off by default. When enabled,
+          it accesses a folder only after the user explicitly selects or approves
+          that folder via the browser's native folder picker. Sync files may
+          contain viewing history, profiles, preferences, and sanitized profile
+          images, stored in structured format directly in that directory.
+        </p>
+        <p>
+          Bynji does not upload Local Sync data to the developer or to any remote
+          servers. If the user chooses a separate folder-sync or cloud-storage
+          provider, that provider's privacy and security terms apply. The user is
+          responsible for protecting the selected folder and deciding whether to
+          trust that provider. Denied, revoked, or unavailable folder access does
+          not disable normal local tracking, Library, or Resume features.
         </p>
 
         <h2 id="permissions">Permissions</h2>
@@ -164,7 +188,10 @@
             Web navigation keeps playback attached to the correct presentation
             after navigation or player replacement.
           </li>
-          <li>Alarms perform bounded local maintenance.</li>
+          <li>
+            Alarms perform bounded local maintenance and, only when Local Sync
+            is available and enabled, bounded sync checks.
+          </li>
           <li>
             Side Panel provides an optional browser-owned Bynji interface.
           </li>
@@ -185,14 +212,13 @@
           Bynji does not sell, rent, share, or use viewing information for
           advertising, credit decisions, profiling, or generalized market
           research. The developer cannot remotely access locally stored viewing
-          information. Users may intentionally share an export under their own
-          control.
+          information. Users may intentionally share an export or Local Sync
+          folder under their own control.
         </p>
         <p>
-          Bynji validates extension messages and imported records, uses Manifest
-          V3 with locally packaged executable code, and sanitizes sensitive
-          query parameters in bounded diagnostics. Users should protect exported
-          plaintext files as private viewing history.
+          Bynji uses locally packaged Manifest V3 code and reasonable safeguards
+          appropriate to locally stored viewing data. Users should protect
+          exported and synchronized plaintext files as private viewing history.
         </p>
 
         <h2>Chrome Web Store Limited Use disclosure</h2>
