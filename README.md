@@ -26,6 +26,7 @@ their Library under their control.
 
 - Chrome Web Store: https://chromewebstore.google.com/detail/bynji/bficoegaabaomkpamgkogghmghdmhdac
 - Home: https://bynjiapp.github.io/bynji-legal/
+- Local Sync: https://bynjiapp.github.io/bynji-legal/sync.html
 - Help: https://bynjiapp.github.io/bynji-legal/help.html
 - Privacy Policy: https://bynjiapp.github.io/bynji-legal/privacy.html
 - Terms: https://bynjiapp.github.io/bynji-legal/terms.html
@@ -39,6 +40,7 @@ If Bynji makes watching a little easier, you can support its independent develop
 ## Repository contents
 
 - `index.html` — public product homepage
+- `sync.html` — Local Sync multi-device setup and privacy explainer
 - `help.html` — original Bynji quick guide, troubleshooting, and FAQ
 - `privacy.html` — Bynji Privacy Policy
 - `terms.html` — Bynji Terms

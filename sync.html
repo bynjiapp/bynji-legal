@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#06111e" />
+    <meta
+      name="description"
+      content="Learn how Bynji's optional Local Sync mirrors your video library across multiple computers without cloud servers or terminal scripts."
+    />
+    <meta property="og:title" content="Local Folder Sync · Bynji" />
+    <meta
+      property="og:description"
+      content="Sync video progress across your computers using your own local folder. No accounts, no central servers, no terminal setup."
+    />
+    <meta
+      property="og:image"
+      content="https://bynjiapp.github.io/bynji-legal/assets/bynji-brand-banner.png"
+    />
+    <meta property="og:url" content="https://bynjiapp.github.io/bynji-legal/sync.html" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Local Sync · Bynji</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16.png"
+    />
+    <script src="theme.js?v=20260831-2"></script>
+    <link rel="stylesheet" href="site.css?v=20260831-2" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Bynji home">
+        <img src="assets/bynji-icon-128.png" alt="" width="42" height="42" />
+        <span>Bynji</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a aria-current="page" href="sync.html">Local Sync</a>
+        <a href="help.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a
+          class="nav-support"
+          href="https://ko-fi.com/bynji"
+          target="_blank"
+          rel="noreferrer"
+          ><span aria-hidden="true">♥</span> Support</a
+        >
+      </nav>
+    </header>
+
+    <main id="main" class="page-shell">
+      <aside class="page-aside">
+        <strong>Local Sync</strong>
+        <nav aria-label="Sync topics">
+          <a href="#how-it-works">How it works</a>
+          <a href="#multi-device">Multi-computer setup</a>
+          <a href="#supported-tools">Compatible sync tools</a>
+          <a href="#brave">Brave browser setup</a>
+          <a href="#privacy">Privacy &amp; ownership</a>
+          <a href="#faq">Sync FAQ</a>
+        </nav>
+      </aside>
+
+      <article class="help-page">
+        <p class="eyebrow">Zero-cloud sync</p>
+        <h1>Local Folder Sync</h1>
+        <p class="page-intro">
+          Sync your video progress and Library across all your computers without creating an account,
+          transmitting data to a developer-operated server, or running command-line scripts.
+        </p>
+
+        <section id="how-it-works">
+          <h2>How Bynji Local Sync works</h2>
+          <p>
+            Most browser extensions require a login and send your browsing activity to remote cloud servers.
+            Bynji takes the opposite approach: it uses the standard, browser-native <em>File System Access API</em>
+            to write your Library directly to a folder on your computer that you select.
+          </p>
+          <div class="quick-grid">
+            <div class="quick-card">
+              <h3>1. Browser-native</h3>
+              <p>
+                Connects through standard Chromium folder picker. No native helper binaries or terminal commands required.
+              </p>
+            </div>
+            <div class="quick-card">
+              <h3>2. Device isolation</h3>
+              <p>
+                Each computer writes only into its own private subfolder, preventing file conflicts and data overwrites.
+              </p>
+            </div>
+            <div class="quick-card">
+              <h3>3. Automatic merge</h3>
+              <p>
+                When Bynji opens or syncs, it reads the latest progress from all connected computers and merges it into your local Library.
+              </p>
+            </div>
+            <div class="quick-card">
+              <h3>4. Works offline</h3>
+              <p>
+                Your Library is always stored locally in your browser. Disconnected or missing folders never interrupt local playback.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="multi-device">
+          <h2>Setting up multiple computers</h2>
+          <ol class="step-list">
+            <li>
+              <span>1</span>
+              <div>
+                <strong>Choose your sync folder on PC 1</strong>
+                <p>
+                  Open Bynji Settings &gt; Local Sync, click <strong>Choose sync folder</strong>, and select any local folder
+                  (for example, a folder inside your Syncthing, Dropbox, Google Drive, OneDrive, or local network share).
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>2</span>
+              <div>
+                <strong>Mirror that folder to PC 2</strong>
+                <p>
+                  Let your chosen sync service mirror that folder to your second computer as you normally would.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>3</span>
+              <div>
+                <strong>Select the mirrored folder on PC 2</strong>
+                <p>
+                  On your second computer, open Bynji Settings &gt; Local Sync and select the synced folder. That's it!
+                  Both computers will now synchronize progress automatically.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section id="supported-tools">
+          <h2>Compatible sync tools</h2>
+          <p>
+            Because Bynji writes standard structured files to your disk, you can use whatever file synchronization tool fits your security and privacy preferences:
+          </p>
+          <ul>
+            <li><strong>Syncthing:</strong> 100% peer-to-peer, open-source sync with zero third-party servers.</li>
+            <li><strong>Personal Cloud:</strong> Dropbox, Google Drive, Microsoft OneDrive, Proton Drive, or iCloud Drive.</li>
+            <li><strong>Local Network (NAS):</strong> A Samba, NFS, or shared local network drive.</li>
+            <li><strong>Manual / USB:</strong> Copy the folder between computers on a thumb drive anytime.</li>
+          </ul>
+        </section>
+
+        <section id="brave">
+          <h2>Using Local Sync in Brave browser</h2>
+          <p>
+            By default, the Brave browser blocks the File System Access API for privacy protection. If you use Brave,
+            enable folder access with these quick steps:
+          </p>
+          <ol>
+            <li>Type <code>brave://flags</code> into your Brave address bar.</li>
+            <li>Search for <strong>File System Access API</strong>.</li>
+            <li>Set the flag to <strong>Enabled</strong> and relaunch Brave.</li>
+            <li>Return to Bynji Settings &gt; Local Sync and click <strong>Choose sync folder</strong>.</li>
+          </ol>
+        </section>
+
+        <section id="privacy">
+          <h2>Privacy and data ownership</h2>
+          <p>
+            Bynji never has access to your cloud credentials or remote storage accounts. The developer operates zero servers
+            and cannot see your viewing history, device names, or watched titles. Your sync data remains entirely your own property
+            and under your direct control.
+          </p>
+        </section>
+
+        <section id="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-grid">
+            <div class="faq-card">
+              <h3>What happens if I disconnect my sync folder?</h3>
+              <p>
+                Nothing is lost. Your browser keeps your complete viewing history in its local database. You can re-select the folder anytime.
+              </p>
+            </div>
+            <div class="faq-card">
+              <h3>Can two computers overwrite each other?</h3>
+              <p>
+                No. Each computer maintains its own isolated folder. Bynji reads each device and conservatively resolves the furthest confirmed progress.
+              </p>
+            </div>
+            <div class="faq-card">
+              <h3>Does Local Sync cost anything?</h3>
+              <p>
+                No. Local Sync is an included, free feature of Bynji.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/bynji-icon-128.png" alt="" width="38" height="38" />
+        <div>
+          <strong>Bynji</strong>
+          <span>Private video progress. Local-first. No ads.</span>
+        </div>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="sync.html">Local Sync</a>
+        <a href="help.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+        <a
+          href="https://chromewebstore.google.com/detail/bynji/bficoegaabaomkpamgkogghmghdmhdac"
+          target="_blank"
+          rel="noreferrer"
+          >Chrome Web Store</a
+        >
+      </nav>
+      <p>
+        © 2026 Bynji. Third-party names and marks belong to their respective owners.
+      </p>
+    </footer>
+  </body>
+</html>
