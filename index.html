@@ -34,6 +34,7 @@
       href="assets/favicon-16.png"
     />
     <script src="theme.js?v=20260831-2"></script>
+    <script src="simulator.js?v=20260905-1" defer></script>
     <link rel="stylesheet" href="site.css?v=20260831-2" />
     <script type="application/ld+json">
       {
@@ -126,18 +127,32 @@
             <li>No analytics</li>
           </ul>
         </div>
-        <div class="hero-art" aria-hidden="true">
+        <div class="hero-art">
           <img
             src="assets/bynji-icon-128.png"
-            alt=""
+            alt="Bynji Logo"
             width="128"
             height="128"
           />
-          <div class="resume-card">
-            <span class="resume-label">Resume</span>
+          <div class="resume-card" data-hero-card data-state="initial">
+            <span class="resume-label">Interactive Demo</span>
             <strong>Continue from 41:46?</strong>
-            <span class="progress-track"><span></span></span>
-            <span class="resume-meta">Saved privately in your browser</span>
+            <span class="progress-track"><span data-hero-progress style="width: 72%;"></span></span>
+            <span class="resume-meta" data-hero-status>Saved privately in your browser</span>
+            <div class="resume-card__actions">
+              <button type="button" class="resume-card__btn resume-card__btn--primary" data-hero-resume>
+                ▶ Resume
+              </button>
+              <button type="button" class="resume-card__btn" data-hero-dismiss>
+                Dismiss
+              </button>
+            </div>
+            <div class="resume-card__reset-box">
+              <button type="button" class="resume-card__btn" data-hero-reset>
+                ↺ Replay demo
+              </button>
+            </div>
+            <div class="hero-toast" data-hero-toast role="status" aria-live="polite"></div>
           </div>
         </div>
       </section>
@@ -178,17 +193,191 @@
         </article>
       </section>
 
-      <section class="showcase" aria-labelledby="showcase-title">
+      <section class="showcase simulator-section" aria-labelledby="showcase-title">
         <div class="section-heading">
-          <p class="eyebrow">Built to stay out of the way</p>
-          <h2 id="showcase-title">Watch normally. Bynji handles the rest.</h2>
+          <p class="eyebrow">Interactive product demo</p>
+          <h2 id="showcase-title">Experience Bynji right in your browser.</h2>
           <p>
-            Bynji waits for meaningful playback, keeps uncertain media separate,
-            and gives you direct control over completion, corrections, exports
-            and deletion.
+            Try the live simulator below to see how Bynji remembers playback, organizes your continue
+            watching shelf, and computes private insights without an account or cloud servers.
           </p>
         </div>
-        <figure class="product-shot product-shot--wide">
+
+        <!-- Interactive Simulator Window -->
+        <div class="simulator-window" data-bynji-simulator>
+          <div class="simulator-titlebar">
+            <div class="simulator-traffic-lights" aria-hidden="true">
+              <span class="traffic-red"></span>
+              <span class="traffic-yellow"></span>
+              <span class="traffic-green"></span>
+            </div>
+            <div class="simulator-url-bar">
+              <span class="lock-icon">🔒</span>
+              <span>https://streaming.example.com/watch?v=night-walk-ep3</span>
+            </div>
+            <span class="simulator-badge">Local-First</span>
+          </div>
+
+          <nav class="simulator-tab-nav" aria-label="Simulator features">
+            <button type="button" class="sim-tab-btn is-active" data-sim-tab="resume" aria-selected="true">
+              <span>▶</span> 1. Smart Resume
+            </button>
+            <button type="button" class="sim-tab-btn" data-sim-tab="shelf" aria-selected="false">
+              <span>▦</span> 2. Continue Watching Shelf
+            </button>
+            <button type="button" class="sim-tab-btn" data-sim-tab="insights" aria-selected="false">
+              <span>◔</span> 3. Private Insights
+            </button>
+            <button type="button" class="sim-tab-btn" data-sim-tab="sync" aria-selected="false">
+              <span>⇄</span> 4. Zero-Cloud Sync
+            </button>
+          </nav>
+
+          <div class="simulator-body">
+            <!-- Panel 1: Smart Resume Player -->
+            <div class="sim-panel is-active" data-sim-panel="resume">
+              <div class="sim-player">
+                <div class="sim-player__backdrop"></div>
+                <div class="sim-player__top-bar">
+                  <span class="sim-player__title">Bynji's Night Walk — S1:E3 "Midnight Echoes"</span>
+                  <span class="status-dot"></span>
+                </div>
+                <div class="sim-player__center">
+                  <div class="sim-player__resume-dialog">
+                    <span class="resume-label">Bynji Resume Prompt</span>
+                    <strong style="color: var(--text-strong); font-size: 19px;">Pick up from 41:46?</strong>
+                    <span class="resume-meta">Saved automatically on this device</span>
+                    <div style="display: flex; gap: 8px; margin-top: 4px;">
+                      <button type="button" class="resume-card__btn resume-card__btn--primary" onclick="this.closest('.sim-player').querySelector('.sim-player__scrubber-fill').style.width='72%'; this.textContent='✓ Resumed!';">
+                        ▶ Resume
+                      </button>
+                      <button type="button" class="resume-card__btn" onclick="this.closest('.sim-player__resume-dialog').style.display='none';">
+                        Dismiss
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="sim-player__bottom-bar">
+                  <div class="sim-player__scrubber">
+                    <div class="sim-player__scrubber-fill"></div>
+                  </div>
+                  <div class="sim-player__controls">
+                    <span>▶ 41:46 / 58:20</span>
+                    <span>1080p HD • Private Tracking Active</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 2: Continue Watching Shelf -->
+            <div class="sim-panel" data-sim-panel="shelf" hidden>
+              <div class="sim-shelf-layout">
+                <div class="sim-shelf-list">
+                  <div class="sim-shelf-item is-selected" data-shelf-card data-title="Bynji's Night Walk — Ep. 3" data-meta="Streaming Site • S1:E3" data-time="41:46 / 58:20" data-pct="72%">
+                    <div class="sim-shelf-thumb">▶</div>
+                    <div class="sim-shelf-info">
+                      <strong>Bynji's Night Walk — Ep. 3</strong>
+                      <span>41:46 / 58:20 (72% complete)</span>
+                    </div>
+                  </div>
+                  <div class="sim-shelf-item" data-shelf-card data-title="Cosmos Voyage: Deep Universe" data-meta="Documentary • 4K Web Player" data-time="1:14:20 / 1:45:00" data-pct="70%">
+                    <div class="sim-shelf-thumb">🪐</div>
+                    <div class="sim-shelf-info">
+                      <strong>Cosmos Voyage: Deep Universe</strong>
+                      <span>1:14:20 / 1:45:00 (70% complete)</span>
+                    </div>
+                  </div>
+                  <div class="sim-shelf-item" data-shelf-card data-title="Modern Software Engineering 2026" data-meta="Lecture • Tech Academy" data-time="18:30 / 42:15" data-pct="44%">
+                    <div class="sim-shelf-thumb">💻</div>
+                    <div class="sim-shelf-info">
+                      <strong>Modern Software Engineering 2026</strong>
+                      <span>18:30 / 42:15 (44% complete)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="sim-shelf-preview-card">
+                  <span class="resume-label">Details Panel Preview</span>
+                  <strong data-shelf-preview-title style="color: var(--text-strong); font-size: 18px;">Bynji's Night Walk — Ep. 3</strong>
+                  <span data-shelf-preview-meta class="resume-meta">Streaming Site • S1:E3</span>
+                  <div class="progress-track" style="margin: 8px 0;"><span data-shelf-preview-progress style="width: 72%; height: 100%; display: block; background: var(--accent);"></span></div>
+                  <span data-shelf-preview-time class="resume-meta">41:46 / 58:20</span>
+                  <button type="button" class="button button--primary" style="min-height: 38px; padding: 6px 14px; font-size: 13px; margin-top: 6px;">
+                    ▶ Resume playback
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3: Private Insights -->
+            <div class="sim-panel" data-sim-panel="insights" hidden>
+              <div class="sim-insights-header">
+                <div>
+                  <h3 style="margin: 0 0 4px; color: var(--text-strong);">On-Device Viewing Insights</h3>
+                  <span class="resume-meta">Summarized privately in IndexedDB. Zero cloud telemetry.</span>
+                </div>
+                <div class="sim-pills">
+                  <button type="button" class="sim-pill-btn is-active" data-insights-range="week">This Week</button>
+                  <button type="button" class="sim-pill-btn" data-insights-range="month">Month</button>
+                  <button type="button" class="sim-pill-btn" data-insights-range="all">All Time</button>
+                </div>
+              </div>
+              <div class="sim-stats-grid">
+                <div class="sim-stat-card">
+                  <span class="label">Watch Time</span>
+                  <span class="value" data-stat-total-time>14.8 hrs</span>
+                  <span class="subtext">↑ 12% vs last week</span>
+                </div>
+                <div class="sim-stat-card">
+                  <span class="label">Episodes Watched</span>
+                  <span class="value" data-stat-total-videos>23 videos</span>
+                  <span class="subtext">4 series in progress</span>
+                </div>
+                <div class="sim-stat-card">
+                  <span class="label">Completion Rate</span>
+                  <span class="value" data-stat-completion>84%</span>
+                  <span class="subtext">100% on-device</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 4: Zero-Cloud Sync -->
+            <div class="sim-panel" data-sim-panel="sync" hidden>
+              <div class="sim-sync-flow">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <h3 style="margin: 0 0 4px; color: var(--text-strong);">Local Folder Synchronization</h3>
+                    <span class="resume-meta">Paired with your local folder (e.g. Syncthing, Dropbox, NAS)</span>
+                  </div>
+                  <button type="button" class="button button--primary" style="min-height: 38px; padding: 6px 14px; font-size: 13px;" data-sim-sync-trigger>
+                    🔄 Sync Now
+                  </button>
+                </div>
+                <div class="sim-sync-devices">
+                  <div class="sim-device-card">
+                    <div class="sim-device-icon">💻</div>
+                    <strong style="display: block; color: var(--text-strong);">Laptop (Chrome)</strong>
+                    <span class="resume-meta">devices/laptop-id/</span>
+                  </div>
+                  <div class="sim-sync-connector">
+                    <span>⇄</span>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--muted);">folder.json</span>
+                  </div>
+                  <div class="sim-device-card">
+                    <div class="sim-device-icon">🖥️</div>
+                    <strong style="display: block; color: var(--text-strong);">Desktop PC (Brave)</strong>
+                    <span class="resume-meta">devices/desktop-id/</span>
+                  </div>
+                </div>
+                <div style="background: var(--surface-secondary); padding: 14px 20px; border-radius: var(--radius-small); border: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 13px;">
+                  <span data-sim-sync-status><span class="status-dot status-dot--success"></span> Synced (2 devices)</span>
+                  <span class="resume-meta">Last sync: <span data-sim-sync-time>2 mins ago</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="product-shot product-shot--wide" style="margin-top: 40px;">
           <img
             src="assets/library.png"
             alt="Bynji Library showing Continue Watching, an organized series list and item details"

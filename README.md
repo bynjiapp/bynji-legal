@@ -47,6 +47,7 @@ If Bynji makes watching a little easier, you can support its independent develop
 - `support.html` — voluntary Ko-fi support page
 - `site.css` — responsive Bynji styling with dark mode as the default
 - `theme.js` — local light/dark switch; it stores only the visitor's theme preference
+- `simulator.js` — interactive client-side product demo and simulator
 - `assets/` — approved Bynji artwork and product screenshots
 - `.nojekyll` — serves the site directly through GitHub Pages without Jekyll processing
 - `robots.txt` and `sitemap.xml` — basic search-engine discovery for the public pages

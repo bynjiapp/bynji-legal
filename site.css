@@ -900,3 +900,522 @@ h3 {
     scroll-behavior: auto;
   }
 }
+
+/* ── Interactive Hero Card & Toast ────────────────────────────────────────── */
+.resume-card {
+  position: relative;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-2px) rotate(-1.5deg);
+}
+
+.resume-card__actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.resume-card__btn {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-small);
+  padding: 8px 14px;
+  background: var(--surface-secondary);
+  color: var(--text-strong);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 150ms ease, border-color 150ms ease, transform 100ms ease;
+}
+
+.resume-card__btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+.resume-card__btn:active {
+  transform: scale(0.97);
+}
+
+.resume-card__btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.resume-card__btn--primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.resume-card__reset-box {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.resume-card[data-state="resumed"] .resume-card__actions,
+.resume-card[data-state="dismissed"] .resume-card__actions {
+  display: none;
+}
+
+.resume-card[data-state="resumed"] .resume-card__reset-box,
+.resume-card[data-state="dismissed"] .resume-card__reset-box {
+  display: flex;
+}
+
+.hero-toast {
+  position: absolute;
+  bottom: -46px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--surface-selected);
+  border: 1px solid var(--accent);
+  color: var(--text-strong);
+  font-size: 13px;
+  font-weight: 650;
+  padding: 8px 16px;
+  border-radius: 99px;
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.hero-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Interactive Showcase App Window Simulator ───────────────────────────── */
+.simulator-section {
+  margin: 70px 0 30px;
+}
+
+.simulator-window {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.simulator-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  background: var(--surface-secondary);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.simulator-traffic-lights {
+  display: flex;
+  gap: 7px;
+}
+
+.simulator-traffic-lights span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.traffic-red { background: #ff5f56; }
+.traffic-yellow { background: #ffbd2e; }
+.traffic-green { background: #27c93f; }
+
+.simulator-url-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 5px 16px;
+  color: var(--muted);
+  font-size: 12px;
+  max-width: 480px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.simulator-url-bar .lock-icon {
+  color: var(--success);
+  font-size: 11px;
+}
+
+.simulator-badge {
+  font-size: 11px;
+  font-weight: 750;
+  color: var(--accent);
+  background: var(--surface-selected);
+  border: 1px solid var(--accent-soft);
+  padding: 3px 9px;
+  border-radius: 99px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.simulator-tab-nav {
+  display: flex;
+  gap: 4px;
+  padding: 8px 16px;
+  background: var(--surface-secondary);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.sim-tab-btn {
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-small);
+  padding: 8px 15px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 150ms ease, background 150ms ease;
+  white-space: nowrap;
+}
+
+.sim-tab-btn:hover {
+  color: var(--text-strong);
+  background: var(--surface-hover);
+}
+
+.sim-tab-btn.is-active {
+  color: var(--accent);
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+}
+
+.simulator-body {
+  min-height: 480px;
+  position: relative;
+  background: var(--surface);
+}
+
+.sim-panel {
+  display: none;
+  padding: 30px;
+  animation: bynjiFadeIn 220ms ease;
+}
+
+.sim-panel.is-active {
+  display: block;
+}
+
+@keyframes bynjiFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tab 1: Video Player Simulation ── */
+.sim-player {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #020710;
+  aspect-ratio: 16 / 9;
+  max-height: 420px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+}
+
+.sim-player__backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 40%, #173256 0%, #08111e 65%, #03070d 100%);
+  z-index: 1;
+}
+
+.sim-player__top-bar {
+  position: relative;
+  z-index: 3;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 60%), transparent);
+}
+
+.sim-player__title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sim-player__center {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sim-player__resume-dialog {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  width: min(90%, 380px);
+  box-shadow: 0 20px 45px rgb(0 0 0 / 50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sim-player__bottom-bar {
+  position: relative;
+  z-index: 3;
+  padding: 14px 20px;
+  background: linear-gradient(to top, rgb(0 0 0 / 70%), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sim-player__scrubber {
+  height: 6px;
+  background: rgb(255 255 255 / 25%);
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.sim-player__scrubber-fill {
+  height: 100%;
+  width: 71%;
+  background: var(--accent);
+  transition: width 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sim-player__controls {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Tab 2: Continue Watching Shelf Simulation ── */
+.sim-shelf-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+}
+
+.sim-shelf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sim-shelf-item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  transition: all 160ms ease;
+  align-items: center;
+}
+
+.sim-shelf-item:hover,
+.sim-shelf-item.is-selected {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  transform: translateX(3px);
+}
+
+.sim-shelf-thumb {
+  width: 80px;
+  height: 48px;
+  border-radius: 6px;
+  background: var(--surface-selected);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.sim-shelf-info {
+  flex: 1;
+}
+
+.sim-shelf-info strong {
+  display: block;
+  color: var(--text-strong);
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.sim-shelf-info span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.sim-shelf-preview-card {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Tab 3: Insights Simulation ── */
+.sim-insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.sim-pills {
+  display: flex;
+  gap: 6px;
+}
+
+.sim-pill-btn {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 6px 14px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sim-pill-btn.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.sim-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.sim-stat-card {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sim-stat-card .label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sim-stat-card .value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-strong);
+}
+
+.sim-stat-card .subtext {
+  font-size: 12px;
+  color: var(--success);
+}
+
+/* ── Tab 4: Local Sync Simulation ── */
+.sim-sync-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sim-sync-devices {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.sim-device-card {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.sim-device-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.sim-sync-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.status-dot--syncing {
+  background: var(--accent);
+  animation: bynjiPulse 800ms infinite alternate;
+}
+
+.status-dot--success {
+  background: var(--success);
+}
+
+@keyframes bynjiPulse {
+  from { transform: scale(0.8); opacity: 0.5; }
+  to { transform: scale(1.2); opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .sim-shelf-layout {
+    grid-template-columns: 1fr;
+  }
+  .sim-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .sim-sync-devices {
+    grid-template-columns: 1fr;
+  }
+  .sim-sync-connector {
+    transform: rotate(90deg);
+  }
+}
