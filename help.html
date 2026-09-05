@@ -298,6 +298,20 @@
             Web Store and some protected documents. Bynji also disables
             incognito access by design.
           </p>
+          <h3>Local Sync shows an Error or folder picker does not open in Brave</h3>
+          <p>
+            Brave blocks the browser-native <em>File System Access API</em> by default for privacy reasons. To enable direct folder sync in Brave:
+          </p>
+          <ol>
+            <li>Open a new tab in Brave and navigate to <code>brave://flags/#file-system-access-api</code>.</li>
+            <li>Change <strong>File System Access API</strong> from <em>Default (Disabled)</em> to <strong>Enabled</strong>.</li>
+            <li>Click the <strong>Relaunch</strong> button at the bottom of the browser.</li>
+            <li>Re-open Bynji Settings &gt; Local Sync and click <strong>Choose sync folder</strong>.</li>
+          </ol>
+          <h3>What does the "● Error" status in Local Sync mean?</h3>
+          <p>
+            In the public release, a generic error status indicates that the browser denied folder access, folder permissions were revoked, or the previously selected folder was moved or deleted on your disk. Click <strong>Choose sync folder</strong> in Settings to re-authorize or select your sync folder.
+          </p>
         </section>
 
         <section id="faq">
@@ -366,6 +380,12 @@
       <nav aria-label="Footer navigation">
         <a href="index.html">Home</a><a href="privacy.html">Privacy</a
         ><a href="terms.html">Terms</a><a href="support.html">Support</a>
+        <a
+          href="https://chromewebstore.google.com/detail/bynji/bficoegaabaomkpamgkogghmghdmhdac"
+          target="_blank"
+          rel="noreferrer"
+          >Chrome Web Store</a
+        >
       </nav>
       <p>
         © 2026 Bynji. Third-party names and marks belong to their respective

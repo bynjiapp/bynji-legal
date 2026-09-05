@@ -24,6 +24,7 @@ their Library under their control.
 
 ## Pages
 
+- Chrome Web Store: https://chromewebstore.google.com/detail/bynji/bficoegaabaomkpamgkogghmghdmhdac
 - Home: https://bynjiapp.github.io/bynji-legal/
 - Help: https://bynjiapp.github.io/bynji-legal/help.html
 - Privacy Policy: https://bynjiapp.github.io/bynji-legal/privacy.html
